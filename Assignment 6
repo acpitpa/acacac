@@ -1,0 +1,39 @@
+#include <stdio.h>
+
+int main()
+{
+    int i,j,a;
+    
+    printf("How many lines?:");
+    scanf("%d", &a);
+    
+    for(i=1;i<=a;i++){
+        
+        for(j=i;j<a;j++){
+            printf("%2s", " ");
+        }
+        for(j=1;j<=i*2;j++){
+            printf("%2s","*");
+            
+        } 
+        
+        
+      printf("\n");  
+        
+    }
+     for(i=a;i>=0;i--){
+        
+        for(j=i;j<a;j++){
+            printf("%2s"," ");
+        }
+        for(j=1;j<=i*2;j++){
+            printf("%2s","*");
+            
+        } 
+        
+        
+      printf("\n");  
+        
+    }
+    return 0;
+}
