@@ -5,7 +5,7 @@ float trigo (int, int);
 
 int main()
 {
-    float ans = trigo(2,3);
+    float ans = trigo(3,4);
     printf("%.2f", ans);
 
     return 0;
