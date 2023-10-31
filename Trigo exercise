@@ -1,21 +1,29 @@
 #include <stdio.h>
 #include <math.h>
+float Trigo(int,int);
+int square(int);
 
-float trigo (int, int);
 
 int main()
 {
-    float ans = trigo(3,4);
-    printf("%.2f", ans);
-
+    int a,b;
+    float c;
+    printf("Input two adjacent sides of the right triangle:\n");
+    scanf("%d %d", &a,&b);
+    c=Trigo(a,b);
+    printf("The third side is %.2f", c);
+    //or printf("%d^2 + %d^2 = %.2f", a,b,c);
     return 0;
 }
 
-float trigo (int x, int y) {
+float Trigo (int x, int y){
+    float z=sqrt(square(x)+square(y));
+    //int x_sq=square(x);
+    //int y_sq=square(y);
+    //z=sqrt(x_sq+y_sq);
+    return z;
+    }
     
-    float n;
-    
-    n=sqrt((x*x)+(y*y));
-    
-    return n;
-}
+int square (int x){
+    return x*x;
+    }
