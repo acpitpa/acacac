@@ -19,6 +19,7 @@ int main()
     }
 
     avg=(float) sum/Size;
+    printf(" The average is %.2f\n", avg);
 
     for(i=0;i<Size;i++){
         if(x[i]>avg) printf("The student [%d] gets A\n", i+1);
@@ -27,5 +28,6 @@ int main()
  }
     return 0;
 }
+
 
 
