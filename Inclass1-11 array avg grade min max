@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-#define Size 5
+#define Size 10
 
 int main()
 {
