@@ -1,0 +1,33 @@
+#include <stdio.h>
+#include <stdlib.h>
+#define Size 5
+
+int main()
+{
+    int i;
+    int x[Size];
+    for(i=0;i<Size;i++){
+            //take all array elements in
+            printf("Input number in [%d]", i+1, Size);
+            scanf("%d", &x[i]);
+    }
+
+    int big=x[0];
+    int sm=x[0];
+
+    for(i=1;i<Size;i++){
+        if(big<x[i]) big=x[i];
+        if(sm>x[i]) sm=x[i];
+    }
+    printf("Maximum number is %d\n", big);
+    printf("Minimum number is %d\n", sm);
+
+
+    /*for(i=0;i<Size;i++);
+        printf("%3d", x[i]);
+    puts("");*/
+
+    return 0;
+}
+
+
