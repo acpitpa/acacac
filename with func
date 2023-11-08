@@ -1,0 +1,38 @@
+#include <stdio.h>
+#include <stdlib.h>
+#define ROW_SIZE 3
+#define COL_SIZE 4
+
+void getArray(int [][COL_SIZE], int,int);
+void printArray(int [][COL_SIZE], int,int);
+
+int main()
+{
+    int i,j;
+    int two_dim[ROW_SIZE][COL_SIZE];
+
+    getArray(two_dim,ROW_SIZE,COL_SIZE);
+    printArray(two_dim,ROW_SIZE,COL_SIZE);
+
+    return 0;
+}
+void getArray(int a[][COL_SIZE], int row,int col){
+    int i,j;
+    for(i=0;i<row;i++) {
+         for(j=0;j<col;j++){
+         printf("Input [%d][%d]:",i,j);
+         scanf("%3d", &a[i][j]);
+         }
+    }
+}
+void printArray(int a[][COL_SIZE], int row,int col){
+    int i,j;
+    for(i=0;i<row;i++) {
+         for(j=0;j<col;j++){
+             printf("%3d", a[i][j]);
+
+
+         }
+         printf("\n");
+    }
+}
