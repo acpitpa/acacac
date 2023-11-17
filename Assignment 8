@@ -10,7 +10,7 @@ int main()
         
             //take all array elements in
             
-            printf("Input number in [%d]", i+1, Size);
+            printf("Input number in [%d]:", i+1, Size);
             scanf("%d", &x[i]);
     }
     
@@ -33,10 +33,11 @@ int main()
     }
 
     avg=(float)sum/Size;
+
     printf(" The average is %.2f\n", avg);
 
     for(i=0;i<Size;i++){
-        if(x[i]>avg*1.2) printf("The student [%d] gets A\n", i+1);
+        if(x[i]>1.2*avg) printf("The student [%d] gets A\n", i+1);
         else if(x[i]<=avg*0.8) printf("The student [%d] gets F\n", i+1);
         else printf("The student [%d] gets C\n", i+1);
     }
