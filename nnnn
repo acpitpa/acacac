@@ -1,0 +1,87 @@
+#include <stdio.h>
+#include <stdlib.h>
+#define SIZE 3
+
+struct student {
+    char name [20];//string
+    double score;
+    char grade;
+
+};
+
+void getStudent (struct student[]);
+void convertGrade(struct student[]);
+void showStudent(struct student);
+void showHighest (struct student[]);
+
+int main()
+{
+
+    struct student cst[SIZE];
+    int i,n;
+    getStudent(cst);
+    convertGrade(cst);
+
+    for(i=0;i<SIZE;i++) //{}
+            showStudent(cst[i]);
+
+    showHighest(cst);
+
+
+
+    return 0;
+}
+
+void getStudent (struct student cst[]){
+
+int i; //int n
+    /*printf("How mant student?");
+    scanf("%d", &n);*/
+    for (i=0;i<SIZE;i++){
+        printf("Input name #%d:", i+1);
+        fflush(stdin);
+        scanf("%s", cst[i].name);
+        printf("Score:");
+        scanf("%lf", &cst[i].score);
+
+    }
+
+}
+
+void convertGrade (struct student cst[]){
+
+    for (int i=0;i<SIZE;i++){
+        if(cst[i].score>=90) cst[i].grade='A'; //have to have ' ' naaa
+        else if(cst[i].score>=80) cst[i].grade='B';
+        else if(cst[i].score>=70) cst[i].grade='C';
+        else if(cst[i].score>=60) cst[i].grade='D';
+        else cst[i].grade='F';
+    }
+
+}
+
+void showStudent (struct student cst){
+
+
+    printf("Name: %s has score %.2f and grade %c\n",cst.name, cst.score,cst.grade );
+
+
+}
+
+void showHighest (struct student cst[]){
+
+    struct student max=cst[0];
+
+     for (int i=1;i<SIZE;i++){
+        if(max.score < cst[i].score)
+            max=cst[i];
+
+    }
+
+
+        printf("==Student with a highest is:==\n");
+        showStudent(max);
+
+
+}
+
