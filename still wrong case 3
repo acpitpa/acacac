@@ -1,0 +1,68 @@
+#include <stdio.h>
+#include <string.h>
+
+int main()
+{
+    unsigned int account;// account number
+    char name[30],s_name[30];   // account name
+    double balance; // account balance
+    int choice;
+    char a;
+
+    FILE *fp;
+
+    if ( (fp=fopen("client.dat","a+") )==NULL) {
+        puts ("File could not be opened ");
+    }
+    else{
+        puts("Enter your request");
+        puts("1.Search with Account Name");
+        puts("2.List all account");
+        puts("3.Add account");
+        printf("4.End of run\n?");
+        scanf("%d",&choice);
+
+        while(choice !=4){
+              fscanf(fp,"%d %s %lf",&account,name,&balance);
+              switch(choice){
+                  case 1:
+                    printf("Enter name to search:");
+                    scanf("%s",s_name);
+                   while(!feof(fp)){
+                       if(strcmp(name,s_name)==0)
+                             printf("%-10d%-13s%7.2f\n",account,name,balance);
+                        fscanf(fp,"%d %s %lf",&account,name,&balance);
+                   }
+                  break;
+                  case 2:
+                   while(!feof(fp)){
+                        printf("All account\n");
+                        printf("%-10s%-13s%7s\n","Account","Name","Balance");
+                        while(!feof(fp)){
+                            printf("%-10d%-13s%7.2f\n",account,name,balance);
+                            fscanf(fp,"%d %s %lf",&account,name,&balance);
+                        }
+                   }
+                  break;
+                  /*case 3:
+                      printf("Enter the account number:");
+                        scanf("%d", &account);
+                    while(!feof(fp)){
+                        printf("%d %s %.2f\n",&, a.name, a.balance);
+                        printf("?");
+                        scanf("%d %s %lf", &a.account, a.name, &a.balance); // if use fscanf (no need to put a.__ & have to put fp,
+                    }*/
+
+                    }
+
+              }
+
+        printf("?");
+        scanf("%d",&choice);
+        rewind(fp);
+        }
+        fclose(fp);
+    }
+
+    return 0;
+}
