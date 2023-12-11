@@ -1,0 +1,15 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+  int w=5;
+  int h=7;
+  int arect=w*h;
+  float a=(0.5)*w*h;
+  printf("%10s%10s%10s%10s\n"," ","Width","Height","Area");
+  printf("%10s%10d%10d%10d\n","Rectangle",w,h,arect);
+  printf("%10s%10d%10d%10.2f","Triangle",w,h,a);
+
+    return 0;
+}
