@@ -1,3 +1,4 @@
+//count3
 #include <stdio.h> 
 
 int main()
@@ -19,25 +20,20 @@ int main()
     return 0;
 }
 
-================== Reverse number ====================
-
-#include <stdio.h> 
+//reverse
+#include <stdio.h>
+#include <stdlib.h>
 
 int main()
-{ 
-    int x; 
-    printf("Enter the number:"); 
-    scanf("%d",&x);
-
-    int i,a;
-    int count;
-    count=0;
-
-    while(x>0){
-        if(x%10==3) count++;
-        x/=10;
+{
+    int num;
+    printf("Insert a number : ");
+    scanf("%d",&num);
+    while(num!=0)
+    {
+        printf("%d",num%10);
+        num/=10;
     }
-
-    printf("There are %d 3's in this number\n",count);
     return 0;
 }
+
